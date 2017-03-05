@@ -33,6 +33,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_6
     }
     buildTypes {
+        viewbinderTesting.initWith(buildTypes.debug)
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -57,6 +58,7 @@ dependencies {
     compile 'solutions.alterego:advancedandroidlogger:1.0.8@aar'
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
 
-    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
+    debugCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    viewbinderTestingCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
 }

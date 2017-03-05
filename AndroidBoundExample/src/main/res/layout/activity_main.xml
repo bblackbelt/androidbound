@@ -85,6 +85,7 @@
                 binding="{ Click @- OpenRecyclerViewWithObjectsActivity }"/>
 
         <Button
+                android:id="@+id/open_paginatedrv_activity_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
@@ -103,6 +104,7 @@
             android:layout_height="wrap_content">
 
     <EditText
+            android:id="@+id/edittext_et"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -113,6 +115,7 @@
              { TextColor @= EditTextColor }; { Typeface @- ToFont(this, &apos;italic&apos;) }" />
 
         <Button
+                android:id="@+id/edittext_button"
                 binding="{ Click @= ClearEditTextText }; "
                 android:text="clear"
                 android:layout_width="wrap_content"
