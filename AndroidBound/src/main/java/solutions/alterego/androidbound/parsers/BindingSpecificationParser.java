@@ -1,5 +1,7 @@
 package solutions.alterego.androidbound.parsers;
 
+import android.support.annotation.VisibleForTesting;
+
 import java.util.Map;
 
 import solutions.alterego.androidbound.NullLogger;
@@ -13,6 +15,7 @@ import solutions.alterego.androidbound.resources.interfaces.IResourceProvider;
 
 public class BindingSpecificationParser implements IParser<BindingSpecification> {
 
+    //TODO is this quick enough? is it better to use normal parsing?
     private final static Pattern PATTERN = Pattern
             .compile("\\s*(?<target>(?:[a-zA-Z][a-zA-Z0-9]*(?:\\.[a-zA-Z][a-zA-Z0-9]*)*)*)" +
                     "\\s*(?<mode>@=@|@-|-@|=@|=|@=|@\\+@|(@\\+)|(\\+@)|\\!@)" +
@@ -35,7 +38,8 @@ public class BindingSpecificationParser implements IParser<BindingSpecification>
         setLogger(logger);
     }
 
-    final static String unescape(String value) {
+    @VisibleForTesting
+    String unescape(String value) {
         if (value == null) {
             return null;
         }

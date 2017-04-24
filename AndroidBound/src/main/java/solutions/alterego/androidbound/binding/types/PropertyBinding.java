@@ -15,7 +15,7 @@ public class PropertyBinding extends BindingBase {
     public PropertyBinding(Object subject, String propertyName, boolean needChangesIfPossible, ILogger logger) {
         super(subject, logger);
 
-        mPropertyInfo = Reflector.getProperty(subject.getClass(), propertyName, logger);
+        mPropertyInfo = Reflector.getProperty(subject.getClass(), propertyName, logger); //TODO should pass needChangesIfPossible so as not to look for setters unecessarily?
         setupBinding(subject, mPropertyInfo.getPropertyName(), needChangesIfPossible);
     }
 

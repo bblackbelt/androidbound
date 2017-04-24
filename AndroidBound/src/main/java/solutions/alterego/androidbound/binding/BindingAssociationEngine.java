@@ -49,6 +49,8 @@ public class BindingAssociationEngine implements IBindingAssociationEngine {
         mBindingSpecification = request.getSpecification();
 
         setLogger(logger);
+
+        //TODO can be optimized to not create all these bindings if not necessary? we already have a mode so we know what we need!
         createTargetBinding(request.getTarget());
         createSourceBinding(request.getSource());
 

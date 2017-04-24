@@ -279,7 +279,7 @@ public class Reflector {
             if (sa != null) {
                 // replace instance to make this thread safe...because someone
                 // other may have a reference to this map
-                sa = cloneSparseArray(sa);
+                sa = cloneSparseArray(sa); //TODO do we really need to make a deep clone? do we need a clone at all?
             } else {
                 sa = new SparseArray<CommandInfo>();
             }
@@ -505,7 +505,7 @@ public class Reflector {
         };
     }
 
-    private static <T> SparseArray<T> cloneSparseArray(SparseArray<T> source) {
+    private static <T> SparseArray<T> cloneSparseArray(SparseArray<T> source) { //TODO can this be speeded up?
         if (source == null) {
             return null;
         }
