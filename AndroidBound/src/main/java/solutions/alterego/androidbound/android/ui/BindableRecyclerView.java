@@ -76,13 +76,13 @@ public class BindableRecyclerView extends RecyclerView implements IBindableView,
 
         private int getLastVisibleItemPosition(LayoutManager layoutManager) {
             if (layoutManager instanceof LinearLayoutManager) {
-                return ((LinearLayoutManager) layoutManager).findLastCompletelyVisibleItemPosition();
+                return ((LinearLayoutManager) layoutManager).findLastVisibleItemPosition();
             } else if (layoutManager instanceof StaggeredGridLayoutManager) {
                 if (mVisiblePosition == null) {
                     mVisiblePosition = new int[((StaggeredGridLayoutManager) layoutManager).getSpanCount()];
                 }
                 return ((StaggeredGridLayoutManager) layoutManager)
-                        .findLastCompletelyVisibleItemPositions(mVisiblePosition)[0];
+                        .findLastVisibleItemPositions(mVisiblePosition)[0];
             }
             return 0;
         }
